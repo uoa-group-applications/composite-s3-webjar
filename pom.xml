@@ -1,108 +1,109 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>nz.ac.auckland</groupId>
-    <artifactId>uoa-parent</artifactId>
-    <version>2.3</version>
-  </parent>
-  <groupId>nz.ac.auckland.composite</groupId>
-  <artifactId>composite-s3-webjar</artifactId>
-  <version>5.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>nz.ac.auckland.groupapps.parent</groupId>
+		<artifactId>parent-groupapps-central</artifactId>
+		<version>1.3</version>
+	</parent>
+	<groupId>nz.ac.auckland.composite</groupId>
+	<artifactId>composite-s3-webjar</artifactId>
+	<version>5.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
-  <name>compsite-s3-webjar</name>
+	<name>compsite-s3-webjar</name>
 
-  <url>http://www.auckland.ac.nz</url>
+	<url>http://www.auckland.ac.nz</url>
 
-  <description>
-	  This composite provides the dependencies required for an individual webjar, not the final war artifact.
+	<description>
+		This composite provides the dependencies required for an individual webjar, not the final war artifact.
 
-	  As the webjar may or may not use the Syllabus layer, we don't include that.
+		As the webjar may or may not use the Syllabus layer, we don't include that.
 
-	  This includes common compile-time dependencies. Runtime dependencies should be in test.
-  </description>
+		This includes common compile-time dependencies. Runtime dependencies should be in test.
+	</description>
 
-  <dependencies>
-    <dependency>
-      <groupId>nz.ac.auckland.composite</groupId>
-      <artifactId>composite-s3-base</artifactId>
-      <version>[2,3)</version>
-    </dependency>
+	<dependencies>
+		<dependency>
+			<groupId>nz.ac.auckland.composite</groupId>
+			<artifactId>composite-s3-base</artifactId>
+			<version>[2,3)</version>
+		</dependency>
 
-	  <dependency>
-      <groupId>nz.ac.auckland.composite</groupId>
-      <artifactId>composite-spring-web</artifactId>
-      <version>[5.3,6)</version>
-    </dependency>
+		<dependency>
+			<groupId>nz.ac.auckland.composite</groupId>
+			<artifactId>composite-spring-web</artifactId>
+			<version>[5.3,6)</version>
+		</dependency>
 
-	  <dependency>
-		  <groupId>nz.ac.auckland.composite</groupId>
-		  <artifactId>composite-spring-aspects</artifactId>
-		  <version>[5.3,6)</version>
-	  </dependency>
+		<dependency>
+			<groupId>nz.ac.auckland.composite</groupId>
+			<artifactId>composite-spring-aspects</artifactId>
+			<version>[5.3,6)</version>
+		</dependency>
 
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-webmvc</artifactId>
-      <version>3.2.1.RELEASE</version>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-core</artifactId>
-        </exclusion>
-        <exclusion>
-          <groupId>org.springframework</groupId>
-          <artifactId>spring-beans</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>3.2.1.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-core</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-beans</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
 
-	  <!-- lmz functionality -->
+		<!-- lmz functionality -->
 
-    <dependency>
-      <groupId>nz.ac.auckland.groupapps.lmz</groupId>
-	    <artifactId>lmz-jawr</artifactId>
-	    <version>[1,2)</version>
-    </dependency>
-	  <dependency>
-		  <groupId>nz.ac.auckland.lmz</groupId>
-		  <artifactId>lmz-services</artifactId>
-		  <version>[1,2)</version>
-	  </dependency>
+		<dependency>
+			<groupId>nz.ac.auckland.groupapps.lmz</groupId>
+			<artifactId>lmz-jawr</artifactId>
+			<version>[1,2)</version>
+		</dependency>
+		<dependency>
+			<groupId>nz.ac.auckland.lmz</groupId>
+			<artifactId>lmz-services</artifactId>
+			<version>[1,2)</version>
+		</dependency>
 
 		<!-- javascript && css -->
 
-    <dependency>
-      <groupId>nz.ac.auckland.lmz.javascript</groupId>
-      <artifactId>javascript-common</artifactId>
-      <version>[1,2)</version>
-    </dependency>
-    <dependency>
-      <groupId>nz.ac.auckland.common</groupId>
-      <artifactId>common-uoa-css</artifactId>
-      <version>[1,2)</version>
-    </dependency>
-    <dependency>
-      <groupId>nz.ac.auckland.lmz.javascript</groupId>
-      <artifactId>javascript-angular</artifactId>
-      <version>[1.1,2)</version>
-    </dependency>
+		<dependency>
+			<groupId>nz.ac.auckland.lmz.javascript</groupId>
+			<artifactId>javascript-common</artifactId>
+			<version>[1,2)</version>
+		</dependency>
+		<dependency>
+			<groupId>nz.ac.auckland.common</groupId>
+			<artifactId>common-uoa-css</artifactId>
+			<version>[1,2)</version>
+		</dependency>
+		<dependency>
+			<groupId>nz.ac.auckland.lmz.javascript</groupId>
+			<artifactId>javascript-angular</artifactId>
+			<version>[1.1,2)</version>
+		</dependency>
 
-	  <!-- enable javascript resource loading -->
-	  <dependency>
-		  <groupId>nz.ac.auckland.lmz.javascript</groupId>
-		  <artifactId>javascript-resources</artifactId>
-		  <version>[1.2,2)</version>
-	  </dependency>
+		<!-- enable javascript resource loading -->
+		<dependency>
+			<groupId>nz.ac.auckland.lmz.javascript</groupId>
+			<artifactId>javascript-resources</artifactId>
+			<version>[1.2,2)</version>
+		</dependency>
 
-	  <!-- basic jsp/stencil functionality -->
-    <dependency>
-      <groupId>nz.ac.auckland.stencil</groupId>
-      <artifactId>stencil-util</artifactId>
-      <version>[2,3)</version>
-    </dependency>
+		<!-- basic jsp/stencil functionality -->
+		<dependency>
+			<groupId>nz.ac.auckland.stencil</groupId>
+			<artifactId>stencil-util</artifactId>
+			<version>[2,3)</version>
+		</dependency>
 
-  </dependencies>
+	</dependencies>
 </project>
 
